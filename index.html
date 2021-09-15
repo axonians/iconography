@@ -4,56 +4,175 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Milligram CSS</title>
-    <link rel="stylesheet" href="milligram.css">
-    <link rel="stylesheet" href="fontawesome.css">
+    <title>Iconography</title>
+    <link rel="stylesheet" href="./assets/style.css">
+    <script src="./assets/jquery.js"></script>
     <style>
-        h2{padding:12px;}
     </style>
 </head>
 <body>
-<h1>Milligram CSS Custom</h1><hr>
+<div class="clearfix logo" style="position:fixed;min-width:100%;z-index:500;">
+        <div class="float-left">WFM Reports Tracker</div>
+    <div class="float-right pointable" id="uname">
+        <span class="avatar">K</span> Kerwin Masong <i class="bx bxs-chevron-down"></i>
+    </div>
+    <div id="logout">
+        <a href="#/logout"><i class="bx bx-log-out"></i> Logout</a>
+    </div>
+</div>
+<div class="nav">
+    <ul class="sidebar">
+        <input type="checkbox" name="nav" id="toggle_nav">
+        <div class="menu menu_show" style="display:block">
+            <li><label for="toggle_nav" class="menu_control bx bxs-chevron-right"></label></li>
+        </div>
+        <div class="menu menu_items" style="display:none;">
+            <li><label for="toggle_nav" class="menu_control bx bxs-chevron-left"></label></li>
+            <li><a href="#"><i class="bx bxs-dashboard"></i> Home</a></li>
+            <div id="reports" class="submenu">
+                <li data-for="reports"><i class='bx bxs-report' ></i> Manage Scores</li>
+                <ul>
+                    <li><a href="#">Attendance</a></li>
+                    <li><a href="#">Accuracy</a></li>
+                    <li><a href="#">Timeliness</a></li>
+                    <li><a href="#">Analysis</a></li>
+                    <li><a href="#">NPS</a></li>
+                </ul>
+            </div>
+            <div id="request" class="submenu">
+                <li data-for="request"><i class='bx bxs-add-to-queue' ></i> Manage Requests</li>
+                <ul>
+                    <li><a href="#">Attendance</a></li>
+                    <li><a href="#">Accuracy</a></li>
+                    <li><a href="#">Timeliness</a></li>
+                    <li><a href="#">Analysis</a></li>
+                    <li><a href="#">NPS</a></li>
+                </ul>
+            </div>
+            <li><a href="#"><i class='bx bxs-edit' ></i> Pending Approval</a></li>
+            <li><a href="#"><i class='bx bxs-network-chart' ></i> Allocation</a></li>
+            <div id="admin" class="submenu">
+                <li data-for="admin"><i class='bx bxs-cog' ></i> Admin Center</li>
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">User List</a></li>
+                    <li><a href="#">Hierarchy</a></li>
+                    <div id="allocation" class="submenu">
+                        <li data-for="allocation">Allocation</li>
+                        <ul>
+                            <li><a href="#" data-link>USCA</a></li>
+                            <li><a href="#" data-link>PH</a></li>
+                        </ul>
+                    </div>
+                </ul>
+            </div>
+            <li><a href="#/logout"><i class='bx bx-log-out' ></i> Logout</a></li>
+            
+        </div>
+    </ul>
+</div>
+<div class="main" style="overflow-x:auto;padding-bottom:2rem;">
+    <h1><i class="bx bxs-dashboard"></i> Dashboard</h1>
+    <form action="" class="inline">
+        Search for Manager <input class="inline-form" type="number" name="" id="">
+        <select name="" id="" class="inline-form">
+            <option value="">August, 2021</option>
+        </select>
+        <input class="inline-form" type="submit" name="" value="Search">
+    </form>
+    
+    <h2 style="margin-top:2rem;">Table</h2>
+    <div class="table">
+        <table class="striped hoverable">
+            <tr>
+                <th>Category Id</th>
+                <th>Category Name</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Beverages</td>
+                <td>Soft drinks, coffees, teas, beers, and ales</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Condiments</td>
+                <td>Sweet and savory sauces, relishes, spreads, and seasonings</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Confections</td>
+                <td>Desserts, candies, and sweet breads</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Dairy Products</td>
+                <td>Cheeses</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Grains/Cereals</td>
+                <td>Breads, crackers, pasta, and cereal</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Meat/Poultry</td>
+                <td>Prepared meats</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Produce</td>
+                <td>Dried fruit and bean curd</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Seafood</td>
+                <td>Seaweed and fish</td>
+            </tr>
+        </table>
+    </div>
+    <h2 style="margin-top:2rem;">Progress</h2>
+    <div style="margin-top:2rem;width:calc(100% - 5rem);">
+      <progress value="55" max="100"></progress>
+      <progress value="55" max="100" class="inline"></progress>
+      <progress value="55" max="100" class="inline verbose"></progress>
+      <div class="loader" style="font-size:48px;"></div>
+    </div>
 
-<h2>Modals</h2>
-<p></p>
-    <label for="modal" class="button">Modal One</label>
-    <input type="checkbox" name="modal" id="modal" class="modal">
-    <div class="modal">
-        <div class="card">
-            <label for="modal" class="modal-close">&times;</label>
-            Hello World
+    <h2 style="margin-top:2rem;">Cards</h2>
+    <div class="row" style="width:100%;">
+        <div class="column column-25 quarter col-sm">
+            <legend>Accuracy</legend>
+            <section>View More</section>
+        </div>
+        <div class="column column-25 quarter col-sm">
+            <legend>Analysis</legend>
+            <section>View More</section>
+        </div>
+        <div class="column column-25 quarter col-sm">
+            <legend>Timeliness</legend>
+            <section>View More</section>
+        </div>
+        <div class="column column-25 quarter col-sm">
+            <legend>Attendance</legend>
+            <section>View More</section>
         </div>
     </div>
 
-    <label for="modal2" class="button">Modal Two</label>
-    <input type="checkbox" name="modal2" id="modal2" class="modal">
-    <div class="modal">
-        <div class="card">
-            <label for="modal2" class="modal-close">&times;</label>
-            <p>Hello Modal</p>
-            <p>Hello Modal</p>
-            <p>Hello Modal</p>
-            <p>Hello Modal</p>
-            <p>Hello Modal</p>
-        </div>
+    <h2 style="margin-top:2rem;">Buttons</h2>
+    <div class="" style="margin-top:2rem;">
+            <button class="padded">Regular Button</button>
+            <button class="padded button-outline">Outline Button</button>
+            <button class="padded button-clear">Clear Button</button>
     </div>
 
-    <h2>Accordions</h2>
-    <p></p>
-    <div class="collapse">
-        <input type="checkbox" name="accordion" id="accordion" class="collapse">
-        <label for="accordion">Accordion One</label>
-        <div class="card">
-            <p>Hello World</p>
-        </div>
-        
-        <input type="checkbox" name="accordion2" id="accordion2" checked class="collapse">
-        <label for="accordion2">Accordion Two</label>
-        <div class="card pointable" style="display:block;">
-            <p>Hello World</p>
-        </div>
+    <div class="" style="margin-top:2rem;">
+            <button class="padded" disabled>Regular Button</button>
+            <button class="padded button-outline" disabled>Outline Button</button>
+            <button class="padded button-clear" disabled>Clear Button</button>
     </div>
 
+    <h2 style="margin-top:2rem;">Collapse</h2>
     <div class="collapse">
         <input type="radio" name="accordion3" checked id="accordion3" class="collapse">
         <label for="accordion3">Accordion Three</label>
@@ -68,50 +187,68 @@
         </div>
     </div>
 
-    <h2>Icons</h2>
-    <div>
-        <p><i class="fa fa-search"></i> Search</p>
+    <h2 style="margin-top:2rem;">Modal</h2>   
+    <label for="modal2" class="button">Not working</label>
+    <input type="checkbox" name="modal2" id="modal2" class="modal">
+    <div class="modal">
+        <div class="card" style="border-radius:5px;">
+            <label for="modal2" class="modal-close">&times;</label>
+            <center>
+                <i class='bx bxs-x-circle' style="font-size:8rem;color:var(--error-color);"></i>
+                <h3>Not working</h3>
+            </center>
+        </div>
     </div>
-
-    <h2>Tables</h2>
-    <div style="max-height:180px;" class="table">
-        <table class="hoverable striped">
-                <tr>
-                    <th>Name</th>
-                    <th>City</th>
-                    <th>Gender</th>
-                    <th>Status</th>
-                    <th>Email</th>
-                </tr>
-                <tr>
-                    <td>John Doe</td>
-                    <td>New York, NY</td>
-                    <td>Male</td>
-                    <td>Married</td>
-                    <td>John.Doe@email.com</td>
-                </tr>
-                <tr>
-                    <td>Jane Doe</td>
-                    <td>Las Vegas, NV</td>
-                    <td>Female</td>
-                    <td>Married</td>
-                    <td>Jane.Doe@email.com</td>
-                </tr>
-                <tr>
-                    <td>Curtis Smith</td>
-                    <td>Los Angeles, CA</td>
-                    <td>Male</td>
-                    <td>Single</td>
-                    <td>Curtis.Smith@email.com</td>
-                </tr>
-                <tr>
-                    <td>Anna Roberts</td>
-                    <td>Reno, NV</td>
-                    <td>Female</td>
-                    <td>Single</td>
-                    <td>Anna.Roberts@email.com</td>
-                </tr>
-        </table>
+    <label for="modal" class="button">It works</label>
+    <input type="checkbox" name="modal" id="modal" class="modal">
+    <div class="modal">
+        <div class="card" style="border-radius:5px;">
+            <label for="modal" class="modal-close">&times;</label>
+            <center>
+                <i class='bx bxs-check-circle' style="font-size:8rem;color:var(--good-color);"></i>
+                <h3>It works</h3>
+            </center>
+        </div>
     </div>
+    <label for="warn" class="button">Warning</label>
+    <input type="checkbox" name="warn" id="warn" class="modal">
+    <div class="modal">
+        <div class="card" style="border-radius:5px;background:var(--warning-color)">
+            <label for="warn" class="modal-close">&times;</label>
+            <center>
+                <i class='bx bxs-error' style="font-size:8rem;"></i>
+                <h3>This is a warning</h3>
+            </center>
+        </div>
+    </div>
+</div>
+<script>
+    $('.menu_control').on('click', ()=>{
+        if($('.menu_items').is(":hidden")){
+            $('.menu_items').show();$('.menu_show').hide();
+        }else{
+            $('.menu_items').hide();$('.menu_show').show();
+        }
+    });
+    $('[data-for]').click((e)=>{
+        var el = e.target.dataset.for;
+        $('li[data-for="'+el+'"]+ul').toggle();
+        if($('li[data-for="'+el+'"]+ul').is(":hidden")){
+            $('div#'+el).css('background','transparent');
+            $('li[data-for="'+el+'"]').toggleClass('chevUp');
+        }else{
+            $('div#'+el).css('background','#ddd');
+            $('li[data-for="'+el+'"]').toggleClass('chevUp');
+        }
+    });
+    $('.nav').on('mouseover',()=>{
+        $('.menu_items').show();$('.menu_show').hide();
+    })
+    $('.nav').on('mouseleave',()=>{
+        $('.menu_items').hide();$('.menu_show').show();
+    })
+    $('#uname').click(()=>{ $('#logout').toggle(); $('#uname i').toggleClass('bxs-chevron-up')});
+    $('[data-link]').click((e)=>{e.preventDefault();})
+</script>
 </body>
 </html>
